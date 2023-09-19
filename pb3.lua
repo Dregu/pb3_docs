@@ -585,7 +585,7 @@ function DestroyTextObject(objectId) end
 ---NOTE: the background auto-scales to the display size of the text, which will prevent the text pivot and alignment from working as expected
 ---@cat Screen UI
 ---@param objectId string is the name of the text object
----@param bgActive true/false determines if the background is active or not.
+---@param bgActive boolean determines if the background is active or not.
 function UpdateTextSetBackgroundActive(objectId, bgActive) end
 ---Sets the background color of a text object
 ---@cat Screen UI
