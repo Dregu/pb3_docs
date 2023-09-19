@@ -10,12 +10,6 @@
 
 
 
----Enables buttons in the top bar for navigation forward and backwards through campaign levels.
----@cat Dev
-function EnableLevelNavArrows() end
-
-
-
 ---Permanently tints the texture of the given material. Note that Hydraulics and Roads use a secondary texture, which can be tinted using SetHydraulicsBaseTint and SetRoadEdgeTint respectively
 ---@cat Material
 ---@param materialName string The name of the material to permanently tint, see appendix for valid material names
@@ -343,9 +337,14 @@ function GetBridgeEdgeIsPrebuilt(id) end
 function GetJointIsPrebuilt(id) end
 
 
-
+---Enables buttons in the top bar for navigation forward and backwards through campaign levels.
+---@cat Debug
+function EnableLevelNavArrows() end
+---Shows the current level ID in the level info panel
+---@cat Debug
+function ShowLevelID() end
 ---Unlocks the debug console, allowing it to be opened using the ~ key
----@cat Debug Console
+---@cat Debug
 function EnableDebugConsole() end
 ---Adds a console command that calls a named function from ConsoleCommands.lua
 ---> OnModLoad.lua:
@@ -361,7 +360,7 @@ function EnableDebugConsole() end
 ---  SetMaterialCost(materialName, costValue)
 ---end
 ---```
----@cat Debug Console
+---@cat Debug
 ---@param commandName string is the name of the command the user will type into the debug console
 ---@param helpText string is the help text string the user will see when they type “help” in the debug console
 ---@param numParameters integer is the number of parameters the command requires (use 0 to make app parameters optional and use varargs (...) in the command function)
@@ -391,6 +390,11 @@ function GetVehiclePosition(id) end
 ---@param id string is the id of the vehicle, usually obtained from GetVehicleIds()
 ---@return number speed the current speed of the vehicle
 function GetVehicleSpeed(id) end
+---Returns the ??? of the vehicle
+---@cat Vehicle
+---@param id string is the id of the vehicle, usually obtained from GetVehicleIds()
+---@return Vec3 speed ???
+function GetVehiclePhysicsVelocity(id) end
 ---Returns string representing vehicle game state: "REACHED_FLAG", "UNDERWATER", "DRIVING", "WAITING_START", "WAITING_CHECKPOINT", or "WAITING_BUILD_MODE"
 ---@cat Vehicle
 ---@param id string is the id of the vehicle, usually obtained from GetVehicleIds()
@@ -883,7 +887,7 @@ function GetMouseScreenPosition() end
 ---Returns the world position of the mouse (List<float>)
 ---@cat Utils
 ---@return Vec3 worldPos
-function GetMousePositionWorld() end
+function GetMouseWorldPosition() end
 ---Returns true if the button is currently held down, otherwise returns false
 ---@cat Utils
 ---@param mouseButton integer is the value of the desired mouse button: 0 is the primary button, 1 is the secondary button, and 2 is the middle button
@@ -962,3 +966,11 @@ function GetVar_StringList(varName) end
 ---@param luaString string is the lua string to be executed
 ---@param delaySeconds number is the number of seconds to wait before executing the string
 function RunLuaDelayed(luaString, delaySeconds) end
+
+-- Undocumented functions that seem to exist but might not even do anything
+function OpenLevel() end
+function OpenWorkshopLevel() end
+function SetVehiclePhysicsVelocity() end
+function SetVehiclePosition() end
+function SetVehicleRotation() end
+function SetVehicleSpeed() end
