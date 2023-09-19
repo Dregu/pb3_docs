@@ -97,11 +97,8 @@ function AddCustomShapeTexture(filename, textureName, id) end
 
 
 ---Sets the sky color in different level themes
----> Example (sky that blends from red to green to blue):
----```lua
----SetThemeSky("rocks", "#FF0000", "#00FF00", "#0000FF", "0.5")
----```
 ---@cat Theme
+---@example SetThemeSky("rocks", "#FF0000", "#00FF00", "#0000FF", "0.5")
 ---@param themeName string name of the theme to be modified. Currently one of: Alpine, Rocks, HighDesert, SkyCreeper
 ---@param topColor string Color of top portion of sky using format: #RRGGBBAA
 ---@param midColor string Color of top portion of sky using format: #RRGGBBAA
@@ -348,20 +345,16 @@ function ShowLevelID() end
 ---@cat Debug
 function EnableDebugConsole() end
 ---Adds a console command that calls a named function from ConsoleCommands.lua
----> OnModLoad.lua:
----```lua
----EnableDebugConsole()
----AddDebugConsoleCommand("set_material_cost", "usage: set_material_cost <material_name> <cost_value>", 2)
----```
----> ConsoleCommands.lua:
----```lua
----function set_material_cost(args)
----  materialName = args[1]
----  costValue = tonumber(args[2])
----  SetMaterialCost(materialName, costValue)
----end
----```
 ---@cat Debug
+---@example -- OnModLoad.lua:
+---@example EnableDebugConsole()
+---@example AddDebugConsoleCommand("set_material_cost", "usage: set_material_cost <material_name> <cost_value>", 2)
+---@example -- ConsoleCommands.lua:
+---@example function set_material_cost(args)
+---@example   materialName = args[1]
+---@example   costValue = tonumber(args[2])
+---@example   SetMaterialCost(materialName, costValue)
+---@example end
 ---@param commandName string is the name of the command the user will type into the debug console
 ---@param helpText string is the help text string the user will see when they type “help” in the debug console
 ---@param numParameters integer is the number of parameters the command requires (use 0 to make app parameters optional and use varargs (...) in the command function)
