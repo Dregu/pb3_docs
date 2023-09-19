@@ -337,6 +337,7 @@ function GetBridgeEdgeIsPrebuilt(id) end
 function GetJointIsPrebuilt(id) end
 
 
+
 ---Enables buttons in the top bar for navigation forward and backwards through campaign levels.
 ---@cat Debug
 function EnableLevelNavArrows() end
@@ -390,11 +391,6 @@ function GetVehiclePosition(id) end
 ---@param id string is the id of the vehicle, usually obtained from GetVehicleIds()
 ---@return number speed the current speed of the vehicle
 function GetVehicleSpeed(id) end
----Returns the ??? of the vehicle
----@cat Vehicle
----@param id string is the id of the vehicle, usually obtained from GetVehicleIds()
----@return Vec3 speed ???
-function GetVehiclePhysicsVelocity(id) end
 ---Returns string representing vehicle game state: "REACHED_FLAG", "UNDERWATER", "DRIVING", "WAITING_START", "WAITING_CHECKPOINT", or "WAITING_BUILD_MODE"
 ---@cat Vehicle
 ---@param id string is the id of the vehicle, usually obtained from GetVehicleIds()
@@ -968,9 +964,10 @@ function GetVar_StringList(varName) end
 function RunLuaDelayed(luaString, delaySeconds) end
 
 -- Undocumented functions that seem to exist but might not even do anything
-function OpenLevel() end
-function OpenWorkshopLevel() end
-function SetVehiclePhysicsVelocity() end
-function SetVehiclePosition() end
-function SetVehicleRotation() end
-function SetVehicleSpeed() end
+function OpenLevel(id) end
+function OpenWorkshopLevel(id) end
+function SetVehiclePhysicsVelocity(id, Vec3) end
+function SetVehiclePosition(id, Vec3) end
+function SetVehicleRotation(id, number) end
+function SetVehicleSpeed(id, number) end
+function GetVehiclePhysicsVelocity(id) end
