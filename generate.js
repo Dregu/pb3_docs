@@ -62,7 +62,7 @@ const ordered = Object.keys(funcs).sort().reduce((obj, key) => {
 
 for (const [k, v] of Object.entries(ordered)) {
   v.sort((a, b) => {
-    a.name.localeCompare(b);
+    return a.name.localeCompare(b.name);
   });
 
   add('## ' + k + ' functions');
